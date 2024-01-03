@@ -1,3 +1,15 @@
-Django tutorial course that i am doing
+Python Django tutorial code
 
-install pylance
+<!-- making a django project folder -->
+
+django-admin startproject monthly_challenges
+
+<!-- making apps or modules -->
+
+python3 manage.py startapp challenges
+
+<!-- starting a dev server -->
+
+python3 manage.py runserver
+
+look up "Views python django definition"
