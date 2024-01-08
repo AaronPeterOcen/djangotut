@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 
 # entering the monthly challenges into a dictionary
 
-monthly_challengez = {
+monthly_challenges = {
     "jan": "learn everyday",
     "feb": "learn a new language",
     "mar": "pray to jah",
@@ -21,20 +22,38 @@ monthly_challengez = {
 # Create your views here.
 
 
-def monthly_challenge_numbers(request, month):
-    # converting to a list
-    months = list(monthly_challengez.keys())
+def index(request):
+    list_items = ""
+    months = list(monthly_challenges.keys())
+
+    for month in months:
+        capitalized_month = month.capitalize()
+        month_path = reverse("monthly-challenge", args=[month])
+        list_items += f'<li><a href="{month_path}">{capitalized_month}</a></li>'
+
+    # "<li><a href="...">January</a></li><li><a href="...">February</a></li>..."
+
+    response_data = f"<ul>{list_items}</ul>"
+    return HttpResponse(response_data)
+
+
+def monthly_challenge_by_number(request, month):
+    months = list(monthly_challenges.keys())
 
     if month > len(months):
-        return HttpResponseNotFound("404")
-    fmonth = months[month - 1]
-    return HttpResponseRedirect("/challenges/" + fmonth)
+        return HttpResponseNotFound("Invalid month")
+
+    redirect_month = months[month - 1]
+    redirect_path = reverse(
+        "monthly-challenge", args=[redirect_month]
+    )  # /challenge/january
+    return HttpResponseRedirect(redirect_path)
 
 
-def monthly_challenges(request, month):
+def monthly_challenge(request, month):
     try:
-        text = monthly_challengez[month]
+        challenge_text = monthly_challenges[month]
+        response_data = f"<h1>{challenge_text}</h1>"
+        return HttpResponse(response_data)
     except:
-        return HttpResponseNotFound("Not among the months")
-
-    return HttpResponse(text)
+        return HttpResponseNotFound("<h1>This month is not supported!</h1>")

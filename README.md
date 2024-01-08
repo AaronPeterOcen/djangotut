@@ -13,3 +13,4 @@ python3 manage.py startapp challenges
 python3 manage.py runserver
 
 look up "Views python django definition"
+"Reverse function" <-read
