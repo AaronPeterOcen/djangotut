@@ -2,21 +2,19 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 
-# entering the monthly challenges into a dictionary
-
 monthly_challenges = {
-    "jan": "learn everyday",
-    "feb": "learn a new language",
-    "mar": "pray to jah",
-    "apr": "start job hunting",
-    "may": "learn java",
-    "june": "get a new phone",
-    "july": "get shredded",
-    "aug": "celebrate event",
-    "sept": "new plans",
-    "oct": "do somethin idk",
-    "nov": "idk what to tell ya",
-    "dec": "have an s22 by then",
+    "january": "Wake up at 6pm",
+    "february": "Sleep early!",
+    "march": "Learn Django for at least 20 minutes every day!",
+    "april": "Eat no chicken for the entire month!",
+    "may": "Walk for at least 100 minutes every week!",
+    "june": "Yolo",
+    "july": "Eat no meat for the entire month!",
+    "august": "Walk for at least 20 minutes every day!",
+    "september": "Spend at least 30 minutes every day socializing",
+    "october": "Eat no fish for the week!",
+    "november": "Ride for at least 20 minutes every day!",
+    "december": "Learn German",
 }
 
 # Create your views here.
@@ -28,7 +26,7 @@ def index(request):
 
     for month in months:
         capitalized_month = month.capitalize()
-        month_path = reverse("monthly-challenge", args=[month])
+        month_path = reverse("month-challenge", args=[month])
         list_items += f'<li><a href="{month_path}">{capitalized_month}</a></li>'
 
     # "<li><a href="...">January</a></li><li><a href="...">February</a></li>..."
@@ -45,7 +43,7 @@ def monthly_challenge_by_number(request, month):
 
     redirect_month = months[month - 1]
     redirect_path = reverse(
-        "monthly-challenge", args=[redirect_month]
+        "month-challenge", args=[redirect_month]
     )  # /challenge/january
     return HttpResponseRedirect(redirect_path)
 
