@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>months</title>
+    <title>{{mm|title}}</title>
   </head>
   <body>
-    <h1>Challenges for this month</h1>
-    <h2>Lorem ipsum dolor sit amet.</h2>
+    <!-- using interpolation -> {{ value }} -->
+    <!-- using filters {{ value|title}} -->
+    <h1>Challenges for {{ mm|title }}</h1>
+    <h2>{{ call }}</h2>
   </body>
 </html>
