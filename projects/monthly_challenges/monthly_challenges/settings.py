@@ -61,6 +61,7 @@ TEMPLATES = [
             # configuring key settings
             # BASE_DIR / "challenges" / "templates"
         ],
+        # automatically looks for template folders in the app
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
