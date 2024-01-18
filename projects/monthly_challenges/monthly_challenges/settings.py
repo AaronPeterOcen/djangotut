@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # add the name of the template folder
     "challenges",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -56,6 +57,8 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
+            # could add paths to dirs here
+            # configuring key settings
             # BASE_DIR / "challenges" / "templates"
         ],
         "APP_DIRS": True,
