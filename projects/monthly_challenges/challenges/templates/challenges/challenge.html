@@ -10,6 +10,11 @@
     <!-- using interpolation -> {{ value }} -->
     <!-- using filters {{ value|title}} -->
     <h1>Challenges for {{ mm|title }}</h1>
+    {% comment %} using if tag {% endcomment %}
+    {% if call is not None%}
     <h2>{{ call }}</h2>
+    {% else%}
+    <p>No challenge this month</p>
+    {%endif%}
   </body>
 </html>

@@ -9,7 +9,10 @@
     <ul>
       <!-- using dtl tags -->
       {% for ms in months %}
-      <li><a href="">{{ ms | title }}</a></li>
+      <!-- adding url tag for dynamic urls -->
+      <li>
+        <a href="{% url 'month-challenge' ms %}">{{ ms | title }}</a>
+      </li>
       {%endfor%}
     </ul>
   </body>
