@@ -1,5 +1,12 @@
-{% extends "layout.html" %}{%block page_title%} All Challenges {%endblock%}
+{% extends "layout.html" %}
+
+{% block page_title %}
+All Challenges
+{% endblock page_title %} 
+
 {%block content%}
+{% include "./shared/heder.html" %}
+
 <ul>
   <!-- using dtl tags -->
   {% for ms in months %}

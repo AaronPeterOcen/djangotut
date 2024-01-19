@@ -1,7 +1,8 @@
-{% extends "layout.html" %} {% block page_title %}
-<title>{{mm|title}}</title>
-{% endblock page_title %} {% block content %}
-
+{% extends "layout.html" %} 
+{% block page_title %} {{ mm|title }} Challenge
+{%endblock %} 
+{%block content%}
+{% include "./shared/heder.html" %}
 <!-- using interpolation -> {{ value }} -->
 <!-- using filters {{ value|title}} -->
 <h1>Challenges for {{ mm|title }}</h1>
