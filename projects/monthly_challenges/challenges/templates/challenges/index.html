@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Challenges</title>
-  </head>
-  <body>
-    <ul>
-      <!-- using dtl tags -->
-      {% for ms in months %}
-      <!-- adding url tag for dynamic urls -->
-      <li>
-        <a href="{% url 'month-challenge' ms %}">{{ ms | title }}</a>
-      </li>
-      {%endfor%}
-    </ul>
-  </body>
-</html>
+{% extends "layout.html" %}{%block page_title%} All Challenges {%endblock%}
+{%block content%}
+<ul>
+  <!-- using dtl tags -->
+  {% for ms in months %}
+  <!-- adding url tag for dynamic urls -->
+  <li>
+    <a href="{% url 'month-challenge' ms %}">{{ ms | title }}</a>
+  </li>
+  {%endfor%}
+</ul>
+{% endblock %}

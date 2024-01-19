@@ -60,6 +60,7 @@ TEMPLATES = [
             # could add paths to dirs here
             # configuring key settings
             # BASE_DIR / "challenges" / "templates"
+            BASE_DIR / "templates"
         ],
         # automatically looks for template folders in the app
         "APP_DIRS": True,
