@@ -1,4 +1,9 @@
 {% extends "layout.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/challenges.css" %}">
+{% endblock css %}
 
 {% block page_title %}
 All Challenges
