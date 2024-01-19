@@ -1,4 +1,12 @@
 {% extends "layout.html" %} 
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/challenge.css" %}">
+<link rel="stylesheet" href="{% static "css/includes/header.css" %}">
+
+{% endblock css %}
 {% block page_title %} {{ mm|title }} Challenge
 {%endblock %} 
 {%block content%}
@@ -9,5 +17,5 @@
 {% comment %} using if tag {% endcomment %} {% if call is not None%}
 <h2>{{ call }}</h2>
 {% else%}
-<p>No challenge this month</p>
+<p class="fallback">No challenge this month</p>
 {%endif%} {% endblock content %}
