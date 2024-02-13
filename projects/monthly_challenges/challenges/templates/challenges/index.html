@@ -19,6 +19,7 @@ All Challenges
   {% for ms in months %}
   <!-- adding url tag for dynamic urls -->
   <li>
+    {% comment %} using the url tag {% endcomment %}
     <a href="{% url 'month-challenge' ms %}">{{ ms | title }}</a>
   </li>
   {%endfor%}

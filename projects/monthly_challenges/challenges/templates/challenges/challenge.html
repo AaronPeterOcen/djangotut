@@ -7,8 +7,10 @@
 <link rel="stylesheet" href="{% static "css/includes/header.css" %}">
 
 {% endblock css %}
+
 {% block page_title %} {{ mm|title }} Challenge
 {%endblock %} 
+
 {%block content%}
 {% include "./shared/heder.html" %}
 <!-- using interpolation -> {{ value }} -->
@@ -16,6 +18,6 @@
 <h1>Challenges for {{ mm|title }}</h1>
 {% comment %} using if tag {% endcomment %} {% if call is not None%}
 <h2>{{ call }}</h2>
-{% else%}
+{% else %}
 <p class="fallback">No challenge this month</p>
 {%endif%} {% endblock content %}
