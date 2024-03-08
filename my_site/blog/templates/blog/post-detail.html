@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} My Blog {% endblock title %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog/post.css" %}">
+<link rel="stylesheet" href="{% static "blog/post-detail.css" %}">
+{% endblock css_files %}
+
+{% block content %}
+<section id="summary">
+    <h2>Post Title</h2>
+    <article>
+        <img src="{% static "blog/images/mountains.png" %}" alt="Post Title">
+        <address>By Aaron</address>
+        <div>
+            Last updated on <time></time>
+        </div>
+    </article>
+</section>
+<main>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima corporis laudantium doloremque, mollitia quisquam fugiat minus. Pariatur eveniet laudantium sit eligendi dolorum, voluptates veritatis velit accusantium corrupti facere, qui doloremque?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima corporis laudantium doloremque, mollitia quisquam fugiat minus. Pariatur eveniet laudantium sit eligendi dolorum, voluptates veritatis velit accusantium corrupti facere, qui doloremque?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima corporis laudantium doloremque, mollitia quisquam fugiat minus. Pariatur eveniet laudantium sit eligendi dolorum, voluptates veritatis velit accusantium corrupti facere, qui doloremque?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima corporis laudantium doloremque, mollitia quisquam fugiat minus. Pariatur eveniet laudantium sit eligendi dolorum, voluptates veritatis velit accusantium corrupti facere, qui doloremque?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima corporis laudantium doloremque, mollitia quisquam fugiat minus. Pariatur eveniet laudantium sit eligendi dolorum, voluptates veritatis velit accusantium corrupti facere, qui doloremque?</p>
+
+</main>
+
+{% endblock content %}
