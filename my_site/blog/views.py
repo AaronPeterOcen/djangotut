@@ -8,8 +8,7 @@ def index(request):
     # pass
 
 def posts(request):
-    # return HttpResponse("new page")
-    pass
+    return render(request, "blog/all-posts.html")
 
 def post_detail(request):
     pass
