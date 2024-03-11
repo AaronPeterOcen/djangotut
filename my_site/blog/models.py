@@ -7,7 +7,7 @@ from django.core.validators import MinLengthValidator
 class Tag(models.Model):
     """tag model with a caption field"""
     caption = models.CharField(max_length=20)
-    
+
     def __str__(self):
         return self.caption
 

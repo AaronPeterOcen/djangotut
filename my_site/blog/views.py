@@ -13,8 +13,9 @@ def get_date(post):
 # from django.http import HttpResponse
 # Create your views here.
 
-def index(request, slug):
-    latest_posts = get_object_or_404(Post, slug=slug)
+def index(request):
+    """starting-page"""
+    latest_posts = Post.objects.all().order_by("-date")[:3]
     # sorted_posts = sorted(all_posts, key=get_date)
     # latest_posts = sorted_posts[-3:]
     return render(request,"blog/index.html", {
@@ -33,5 +34,6 @@ def post_detail(request, slug):
     # id_post = next(post for post in all_posts if post["slug"] == slug)
     id_post = Post.objects.get(slug=slug)
     return render(request, "blog/post-detail.html", {
-        "post": id_post
+        "post": id_post,
+        "p_tags": id_post.tags.all()
     })
